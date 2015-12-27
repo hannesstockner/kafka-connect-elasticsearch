@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+<modelVersion>4.0.0</modelVersion>
+
+<groupId>com.hannesstockner.kafka-connect-elasticsearch</groupId>
+<artifactId>kafka-connect-elasticsearch</artifactId>
+<packaging>jar</packaging>
+<version>1.0.0-SNAPSHOT</version>
+<name>kafka-connect-elasticsearch</name>
+<description>
+  A Kafka Connect Elasticsearch connector for copying data from Kafka to Elasticsearch.
+</description>
+
+<licenses>
+  <license>
+    <name>Apache License 2.0</name>
+    <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+    <distribution>repo</distribution>
+  </license>
+</licenses>
+
+<scm>
+  <connection>scm:git:git://github.com/hannesstockner/kafka-connect-elasticsearch.git</connection>
+  <developerConnection>scm:git:git@github.com:hannesstockner/kafka-connect-elasticsearch.git</developerConnection>
+  <url>https://github.com/hannesstockner/kafka-connect-elasticsearch</url>
+  <tag>HEAD</tag>
+</scm>
+
+<properties>
+  <kafka.version>0.9.0.0</kafka.version>
+  <elasticsearch.version>2.1.1</elasticsearch.version>
+  <junit.version>4.12</junit.version>
+  <commons-io.version>2.4</commons-io.version>
+  <joda.version>1.6.2</joda.version>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+
+<dependencies>
+  <dependency>
+    <groupId>org.apache.kafka</groupId>
+    <artifactId>connect-api</artifactId>
+    <version>${kafka.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.elasticsearch</groupId>
+    <artifactId>elasticsearch</artifactId>
+    <version>${elasticsearch.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.kafka</groupId>
+    <artifactId>connect-api</artifactId>
+    <version>${kafka.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>${commons-io.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>${junit.version}</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>joda-time</groupId>
+    <artifactId>joda-time</artifactId>
+    <version>${joda.version}</version>
+  </dependency>
+</dependencies>
+
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>2.5.1</version>
+      <inherited>true</inherited>
+      <configuration>
+        <source>1.7</source>
+        <target>1.7</target>
+      </configuration>
+    </plugin>
+    <plugin>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <version>2.5.3</version>
+      <configuration>
+        <descriptors>
+          <descriptor>src/assembly/development.xml</descriptor>
+          <descriptor>src/assembly/package.xml</descriptor>
+        </descriptors>
+      </configuration>
+      <executions>
+        <execution>
+          <id>make-assembly</id>
+          <phase>package</phase>
+          <goals>
+            <goal>single</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>2.18.1</version>
+      <configuration>
+        <argLine>-Djava.awt.headless=true</argLine>
+        <forkMode>pertest</forkMode>
+      </configuration>
+    </plugin>
+  </plugins>
+
+  <resources>
+    <resource>
+      <directory>src/main/resources</directory>
+      <filtering>true</filtering>
+    </resource>
+  </resources>
+</build>
+
+<profiles>
+  <profile>
+    <id>standalone</id>
+    <build>
+      <plugins>
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <configuration>
+            <descriptors>
+              <descriptor>src/assembly/standalone.xml</descriptor>
+            </descriptors>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+  </profile>
+</profiles>
+</project>

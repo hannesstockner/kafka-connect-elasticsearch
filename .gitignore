@@ -1,0 +1,38 @@
+#Idea and Mac OS X hidden files
+.DS_Store
+.idea
+*.iml
+*.iws
+*.ipr
+
+#Project Files
+*.class
+*.settings
+*.project
+*.classpath
+*.log
+
+# Package Files #
+*.cache
+*.jar
+*.war
+*.ear
+*.war
+/*.launch
+/*.tmproj
+stacktrace.log
+
+#Folders to Ignore 
+/project/target/
+/bin/
+/state/
+state/
+/out/**
+/test/reports
+/target/
+target/
+/log/
+checkpoint_*
+
+# Folders
+/cruise-output/

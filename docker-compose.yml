@@ -1,0 +1,7 @@
+kafka:
+  image: flozano/kafka
+  ports:
+    - "2181:2181"
+    - "9092:9092"
+  environment:
+    ADVERTISED_HOST: 192.168.99.100
