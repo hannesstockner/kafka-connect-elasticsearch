@@ -22,7 +22,7 @@ public class OpenRecipePublisher {
     final String host = "docker";
     final int port = 9092;
 
-    final File inputFile = new File(getClass().getClassLoader().getResource("openrecipes.json").getFile());
+    final File inputFile = new File(getClass().getClassLoader().getResource("openrecipes2.json").getFile());
 
     final String topic = "recipes";
 
