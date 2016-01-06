@@ -51,6 +51,11 @@
   </dependency>
   <dependency>
     <groupId>org.apache.kafka</groupId>
+    <artifactId>connect-file</artifactId>
+    <version>${kafka.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.kafka</groupId>
     <artifactId>connect-runtime</artifactId>
     <version>${kafka.version}</version>
   </dependency>
