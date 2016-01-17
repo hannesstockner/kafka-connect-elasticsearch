@@ -12,19 +12,23 @@ kafka-connect-elasticsearch is a Kafka Connector for loading data from Kafka int
 
 # Quickstart
 
-1. mvn clean package
-2. open a console and export env variable
+Build a package of the code:
+```
+mvn clean package
+```
+Open a console and export env variable:
 ```
 export DOCKER_IP={YOUR_DOCKER_IP_ADDRESS}
 ```
-3. start docker containers
+Start docker containers:
 ```
 docker-compose up
 ```
-4. open another console window and export DOCKER_IP env variable (same as 2)
-5. run connector
+Open another console window and export DOCKER_IP env variable
+
+Run connector:
 ```
 ./run_standalone.sh
 ```
-6. go to http://{YOUR_DOCKER_IP_ADDRESS}:9200/kafka_recipes/_search to check your imported recipes
+Go to http://{YOUR_DOCKER_IP_ADDRESS}:9200/kafka_recipes/_search to check your imported recipes
 
