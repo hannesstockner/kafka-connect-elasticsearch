@@ -21,10 +21,10 @@ export DOCKER_IP={YOUR_DOCKER_IP_ADDRESS}
 ```
 docker-compose up
 ```
-3. open another console window and export DOCKER_IP env variable (same as 2.)
-4. run connector
+4. open another console window and export DOCKER_IP env variable (same as 2)
+5. run connector
 ```
 ./run_standalone.sh
 ```
-5. go to http://{YOUR_DOCKER_IP_ADDRESS}:9200/kafka_recipes/_search to check your imported recipes
+6. go to http://{YOUR_DOCKER_IP_ADDRESS}:9200/kafka_recipes/_search to check your imported recipes
 
