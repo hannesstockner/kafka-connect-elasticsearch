@@ -1,7 +1,7 @@
 # Kafka Connect Elasticsearch
 
-kafka-connect-elasticsearch is a Kafka Connector for loading data from Kafka into Elasticsearch.
-More explanation can be found in the article [Kafka and Elastic Search, A Perfect Match](https://qbox.io/blog/kafka-and-elasticsearch-a-perfect-match-1)
+kafka-connect-elasticsearch is a Kafka Connector for loading data from Kafka into Elasticsearch.   
+More explanation can be found in the article [Kafka and Elastic Search, A Perfect Match](https://qbox.io/blog/kafka-and-elasticsearch-a-perfect-match-1).
 
 # Prerequisites
 
