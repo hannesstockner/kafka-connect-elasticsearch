@@ -1,12 +1,14 @@
-kafka:
-  image: flozano/kafka:0.9.0.0
-  ports:
-    - "2181:2181"
-    - "9092:9092"
-  environment:
-    ADVERTISED_HOST: ${DOCKER_IP}
-elasticsearch:
-  image: elasticsearch
-  ports:
-    - "9200:9200"
-    - "9300:9300"
+version: '2'
+services:
+  kafka:
+    image: flozano/kafka:0.9.0.0
+    ports:
+      - "2181:2181"
+      - "9092:9092"
+    environment:
+      ADVERTISED_HOST: ${DOCKER_IP}
+  elasticsearch:
+    image: elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
