@@ -13,23 +13,9 @@ More explanation can be found in the article [Kafka and Elastic Search, A Perfec
 
 # Quickstart
 
-Build a package of the code:
-```
-mvn clean package
-```
-Open a console and export env variable:
-```
-export DOCKER_IP={YOUR_DOCKER_IP_ADDRESS}
-```
 Start docker containers:
 ```
 docker-compose up
 ```
-Open another console window and export DOCKER_IP env variable
 
-Run connector:
-```
-./run_standalone.sh
-```
 Go to http://{YOUR_DOCKER_IP_ADDRESS}:9200/kafka_recipes/_search to check your imported recipes
-
