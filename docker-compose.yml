@@ -8,7 +8,7 @@ services:
     environment:
       ADVERTISED_HOST: ${DOCKER_IP}
   elasticsearch:
-    image: elasticsearch
+    image: elasticsearch:2.3.5
     ports:
       - "9200:9200"
       - "9300:9300"
